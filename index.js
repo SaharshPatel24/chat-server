@@ -13,7 +13,7 @@ const server = http.createServer(app);
 
 const io = socketIO(server, {
     cors: true,
-    origins: ["localhost:3000"]
+    origins: PORT,
 });
 
 app.use(cors());
@@ -33,7 +33,7 @@ io.on("connection", (socket) => {
     });
 });
 
-server.get('/', function (req, res) {
+app.get('/', function (req, res) {
     res.send("I am working successfully");
 });
 

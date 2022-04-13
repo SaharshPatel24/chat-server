@@ -33,7 +33,7 @@ io.on("connection", (socket) => {
     });
 });
 
-app.get('/', function (req, res) {
+server.get('/', function (req, res) {
     res.send("I am working successfully");
 });
 

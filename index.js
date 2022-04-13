@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const http = require("http");
 const socketIO = require("socket.io");
+const res = require("express/lib/response");
 
 // setup the port our backend app will run on
 const PORT = 3030;
@@ -30,6 +31,10 @@ io.on("connection", (socket) => {
     socket.on("disconnect", () => {
         socket.leave(room);
     });
+});
+
+app.get('/', function (req, res) {
+    res.send("I am working successfully");
 });
 
 server.listen(PORT, () => {

@@ -5,7 +5,7 @@ const socketIO = require("socket.io");
 const res = require("express/lib/response");
 
 // setup the port our backend app will run on
-const PORT = 3030;
+const PORT = process.env.PORT || 3030;
 const NEW_MESSAGE_EVENT = "new-message-event";
 
 const app = express();
